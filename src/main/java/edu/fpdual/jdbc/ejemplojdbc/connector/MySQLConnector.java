@@ -100,9 +100,7 @@ public class MySQLConnector {
     private static void ejemploPreparedStatement() throws SQLException, ClassNotFoundException {
         Connection connection = new MySQLConnector().getMySQLConnection();
         CityManagerImpl cityManager = new CityManagerImpl();
-        Set<City> cities = cityManager.findCityByCountryCodeBetweenPopulation(connection, "ESP", 100000, 250000);
+        int cities = cityManager.updateCity(connection, 1, "Kabul");
         System.out.println(cities);
-        System.out.println("Total de elementos: " + cities.size());
     }
-
 }
